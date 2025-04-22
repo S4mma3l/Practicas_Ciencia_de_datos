@@ -1,19 +1,19 @@
 import tabula
 
-# Specify the path to your PDF file
+# especificar la ruta del archivo pdf
 pdf_path = 'conversor\\archivo2.pdf'
 
-# Specify the path where you want to save the CSV file
+# especificar la ruta donde se guardara el archivo csv
 csv_path = 'conversor\\archivo2.csv'
 
 try:
-    # Use tabula to read tables from the PDF.
-    # 'pages' can be 'all' or a specific page number (e.g., '1', '1,2,3').
-    # 'output_format' can be 'csv', 'json', 'dataframe'. We want 'csv'.
+    # se usa tablula para leer los PDF.
+    # 'paginas' puedes ser 'all' o especificar el numero de paginas (e.g., '1', '1,2,3').
+    # 'formato de salida' puede ser 'csv', 'json', 'dataframe'. nosotros queremos 'csv'.
     tabula.convert_into(pdf_path, csv_path, output_format='csv', pages='all')
-    print(f"Successfully converted tables from '{pdf_path}' to '{csv_path}'")
+    print(f"Conversion exitosa para el archivo '{pdf_path}' a '{csv_path}'")
 
 except FileNotFoundError:
-    print(f"Error: PDF file not found at '{pdf_path}'")
+    print(f"Error: el archivo PDF no funciona '{pdf_path}'")
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print(f"a ocurrido un error: {e}")
